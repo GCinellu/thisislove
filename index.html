@@ -48,16 +48,25 @@
 <script src="js/bootstrap.min.js"></script>
 
 <script>
+  function createMessage(event) {
+    event.preventDefault();
+
+    var sharedValue = $('#share-value').val();
+    $('#shared-message').text(sharedValue);
+
+    $('.box-input').hide();
+    $('.box-message').show();
+  }
+
   $(document).ready(function() {
-    $('#share-btn').click(function(e) {
-      e.preventDefault();
 
-      var sharedValue = $('#share-value').val();
-      $('#shared-message').text(sharedValue);
-
-      $('.box-input').hide();
-      $('.box-message').show();
+    $(document).keypress(function(e) {
+      if(e.which == 13) {
+        createMessage(e);
+      }
     });
+
+    $('#share-btn').click(createMessage);
   });
 </script>
 </body>
