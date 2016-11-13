@@ -48,6 +48,14 @@
 <script src="js/bootstrap.min.js"></script>
 
 <script>
+
+  $.fn.verticalAlign = function ()
+  {
+    return this
+      .css("position", "absolute")
+      .css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
+  };
+
   function createMessage(event) {
     event.preventDefault();
 
@@ -56,6 +64,8 @@
 
     $('.box-input').hide();
     $('.box-message').show();
+
+    $('#shared-message').verticalAlign();
   }
 
   $(document).ready(function() {
