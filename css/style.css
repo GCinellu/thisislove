@@ -1,0 +1,27 @@
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/proxima-nova-black.woff2') format('woff2'),
+    url('fonts/proxima-nova-black.woff') format('woff'),
+    url('fonts/proxima-nova-black.ttf') format('truetype');
+}
+
+
+body {
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: 800;
+    background: #FFE314;
+}
+
+h1 {
+    font-weight: 800;
+}
+
+#shared-message {
+    font-size: 120px;
+    text-transform: uppercase;
+}
